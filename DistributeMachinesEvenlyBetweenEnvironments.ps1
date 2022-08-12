@@ -1,9 +1,9 @@
 # Define working variables
-$octopusURL = "https://busybodyspinaltap.testoctopus.app/"
+$octopusURL = ""
 $octopusAPIKey = ""
 $header = @{ "X-Octopus-ApiKey" = $octopusAPIKey }
 $spaceName = "Default"
-$environments = @("Environments-1", "Environments-21", "Environments-41", "Environments-2", "Environments-22", "Environments-61")
+$environments = @("Environments-1", "Environments-61")
 
 # Get space
 $space = (Invoke-RestMethod -Method Get -Uri "$octopusURL/api/spaces/all" -Headers $header) | Where-Object {$_.Name -eq $spaceName}
